@@ -2,13 +2,18 @@
   "name": "code",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
     "@playwright/test": "^1.52.0",
-    "@types/node": "^24.0.0"
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.0",
+    "ts-jest": "^29.3.4"
   }
 }

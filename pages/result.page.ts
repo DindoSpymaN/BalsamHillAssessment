@@ -9,11 +9,17 @@ export class ResultPage extends BasePage {
     super(page);
   }
 
-  async selectResult(intIndex: any) {
+  async checkprice(intIndex: any) {
     var allStrings = await this.cellResults.locator('.row > .col-md-4').nth(intIndex-1).innerText();
     var containStrings = allStrings.split('\n');
-    const retString = containStrings[3];
-    await this.cellResults.locator('.row > .col-md-4').nth(intIndex-1).click();
+    var retString;
+    for (var index in containStrings) {
+      if (containStrings[index].indexOf('$') >= 0) retString = containStrings[index];
+    }
     return retString;
+  }
+
+  async selectResult(intIndex: any) {
+    await this.cellResults.locator('.row > .col-md-4').nth(intIndex-1).click();
   }
 }
